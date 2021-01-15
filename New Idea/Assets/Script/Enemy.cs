@@ -13,11 +13,25 @@ public class Enemy : MonoBehaviour
     {
         pathfinder = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(UpadatePath());
     }
 
     // Update is called once per frame
     void Update()
     {
-        pathfinder.SetDestination(target.position);
+    }
+
+
+    // Update every frame find the player target is very expensive so we make this function to contral the frequency
+    // 
+    IEnumerator UpadatePath()
+    {
+        float refreshRate = 0.25F;
+        while (target != null)
+        {
+            Vector3 targetPosition = new Vector3(target.position.x, 0, target.position.z); // ensure the target is on the ground
+            pathfinder.SetDestination(targetPosition);
+            yield return new WaitForSeconds(refreshRate);
+        }
     }
 }
