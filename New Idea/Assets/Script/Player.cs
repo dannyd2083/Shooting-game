@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent (typeof (PlayerController))]
 [RequireComponent (typeof (GunController))]
-//fore it to add the player controller scripgt along with it
+//force it to add the player controller scripgt along with it
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5;
