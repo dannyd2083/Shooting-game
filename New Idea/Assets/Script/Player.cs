@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent (typeof (PlayerController))]
 [RequireComponent (typeof (GunController))]
 //force it to add the player controller scripgt along with it
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
     public float moveSpeed = 5;
     Camera viewCamera;
@@ -14,8 +14,9 @@ public class Player : MonoBehaviour
     GunController gunController;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         controller = GetComponent<PlayerController>();
         gunController = GetComponent<GunController>();
         viewCamera = Camera.main;

@@ -424,6 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa71e5dcf51f47548b15be40322f7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 10
   moveSpeed: 5
 --- !u!114 &853961149
 MonoBehaviour:
@@ -701,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff776aca3a5a8a4d8de6ce6c8b109e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 5
 --- !u!136 &2108096898
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //it needs to be executed at small regular steps so that it never goes through an object
-    public void FixedUpdate()
+    void FixedUpdate()
     {
         myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
     }
