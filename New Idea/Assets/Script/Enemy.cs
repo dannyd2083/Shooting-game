@@ -8,7 +8,9 @@ public class Enemy : LivingEntity
 {
     NavMeshAgent pathfinder;
     Transform target;
-
+    float attackDistanceThreshold = 1.5f;
+    float timeBetweenAttack = 1;
+    float nextAttackTime;
     protected override void Start()
     {
         base.Start();
@@ -20,8 +22,27 @@ public class Enemy : LivingEntity
     // Update is called once per frame
     void Update()
     {
+        if (Time.time > nextAttackTime) {
+            float sqrDstToTarget = (target.position - transform.position).sqrMagnitude;
+            if (sqrDstToTarget < Mathf.Pow(attackDistanceThreshold, 2)) {
+                nextAttackTime = Time.time + timeBetweenAttack;
+            }
+        }
     }
 
+
+    IEnumerator Attack()
+    {
+        Vector3 originalPosition = transform.position;
+        Vector3 attackPosition = target.position;
+        float percent = 0;
+        float attackSpeed = 3;
+        while(percent <= 1)
+        {
+            percent += Time.deltaTime * attackSpeed;
+            yield return null;
+        }
+    }
 
     // Update every frame find the player target is very expensive so we make this function to contral the frequency
     // 

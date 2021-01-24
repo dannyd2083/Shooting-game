@@ -702,9 +702,9 @@ MonoBehaviour:
   - enemyCount: 3
     timeBetweenSpawns: 0.5
   - enemyCount: 4
-    timeBetweenSpawns: 2
+    timeBetweenSpawns: 0.5
   - enemyCount: 5
-    timeBetweenSpawns: 3
+    timeBetweenSpawns: 0.5
   enemy: {fileID: 4458040078488322669, guid: 48c74839b06538e40a260de2090a1ad9, type: 3}
 --- !u!4 &1814958013
 Transform:
